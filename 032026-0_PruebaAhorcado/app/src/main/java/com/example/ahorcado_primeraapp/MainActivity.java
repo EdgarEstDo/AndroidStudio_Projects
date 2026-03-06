@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-
+    //Prueba
     //Cajas creadas en la pantalla
     private TextView texto1;
     private TextView texto2;
