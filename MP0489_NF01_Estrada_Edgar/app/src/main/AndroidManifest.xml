@@ -12,7 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MP0489_NF01_Estrada_Edgar">
         <activity
-            android:name=".MainActivity"
+            android:name=".BorrarNotasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerNotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearNotaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ListadoActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
