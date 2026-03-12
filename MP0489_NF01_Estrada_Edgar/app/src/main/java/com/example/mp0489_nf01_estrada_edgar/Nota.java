@@ -12,6 +12,11 @@ public class Nota {
         this.titulo = titulo;
         this.contenido = contenido;
     }
+    //Otro constructor para evitar tener que introducir el id
+    public Nota (String titulo, String contenido) {
+        this.titulo = titulo;
+        this.contenido = contenido;
+    }
     //Métodos getters y setters
     public int getId() {
         return id;
@@ -36,4 +41,11 @@ public class Nota {
     public void setContenido(String contenido) {
         this.contenido = contenido;
     }
+
+    @Override
+    public String toString() {
+        return this.titulo;
+    }
 }
+
+

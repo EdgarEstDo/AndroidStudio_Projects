@@ -1,5 +1,6 @@
 package com.example.mp0489_nf01_estrada_edgar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -17,7 +18,9 @@ public class StartActivity extends AppCompatActivity {
 
     //Creación de variables
     private TextView textoInicial;
+    private TextView textoDesigner;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +33,14 @@ public class StartActivity extends AppCompatActivity {
         });
 
         //Inicialización de variables
-        textoInicial = findViewById(R.id.textView_start);
+        textoInicial = (TextView) findViewById(R.id.textView_start);
+        textoDesigner = (TextView) findViewById(R.id.textView2_start);
+
+        //Detalles asociados al menú
+        setTitle("Inicio");
+
+
+        //Creación de la tarea
 
         TimerTask myTimerTask = new TimerTask() {
             @Override

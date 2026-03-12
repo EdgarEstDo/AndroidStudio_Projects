@@ -13,12 +13,15 @@
         android:theme="@style/Theme.MP0489_NF01_Estrada_Edgar">
         <activity
             android:name=".BorrarNotasActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="false" />
         <activity
             android:name=".VerNotaActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="false" />
         <activity
             android:name=".CrearNotaActivity"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="false" />
         <activity
             android:name=".StartActivity"
