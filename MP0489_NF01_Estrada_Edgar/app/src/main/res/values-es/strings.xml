@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MP0489_NF01_Estrada_Edgar</string>
+
+    //Por defecto, debemos siempre crear este primer punto en inglés
+    //Copiamos la carpeta Values y modificamos acorde al idioma
+    //Finalmente, generamos los idiomas
+
+    //Resources Strings of activity borrar notas
+    <string name="button_BorrarTodo">Borrar todas las notas</string>
+    <string name="button2_BorrarTodo">Volver</string>
+    <string name="Title_BorrarTodo">Borrar todas las notas</string>
+    <string name="Toast_BorrarTodo">Todas las notas han sido borradas</string>
+
+    //Resources Strings of activity crear nota
+    <string name="button_Crear">Volver</string>
+    <string name="button2_Crear">Crear Nota</string>
+    <string name="editTextText2_Crear">Escribe aquí el título de la nota</string>
+    <string name="editTextText3_Crear">Escribe aquí el contenido de la nota</string>
+    <string name="textView2_Crear">Crea tu nota:</string>
+    <string name="Title_CrearNota">Crear Notas</string>
+    <string name="Toast_CrearNota">Nota creada correctamente</string>
+    <string name="Toast_NotaVacia">Debes rellenar ambos campos</string>
+
+    //Resources Strings of activity listado
+    <string name="ListView_listado"></string>
+    <string name="Title_Listado">Notas</string>
+    <string name="Toast_MenuBorrar">Borrar nota</string>
+    <string name="Toast_MenuCrear">Añadir nota</string>
+    <string name="Toast_EscogerNota">Nota seleccionada</string>
+
+    //Resources Strings of activity ver nota
+    <string name="button_Ver">Volver</string>
+    <string name="button2_Ver">Borrar Nota</string>
+    <string name="textView2_Ver">Título de la nota</string>
+    <string name="textView3_Ver">Contenido de la nota</string>
+    <string name="Title_VerNota">Nota</string>
+    <string name="Toast_BorrarNota">Nota borrada correctamente</string>
+
+    //Resources Strings of activity start
+    <string name="textView_start">Notitas</string>
+    <string name="textView2_start">Edgar Estrada Dorrego - IFP</string>
+
+
+</resources>

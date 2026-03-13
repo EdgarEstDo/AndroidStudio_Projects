@@ -25,6 +25,11 @@ public class VerNotaActivity extends AppCompatActivity {
     private Button Volver;
     private Button BorrarNota;
 
+    //Variables para traducción de textos
+    private String Title_VerNota;
+    private String Toast_BorrarNota;
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,8 +42,13 @@ public class VerNotaActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Traducción de textos a partir de los strings.xml
+        Title_VerNota = getString(R.string.Title_VerNota);
+        Toast_BorrarNota = getString(R.string.Toast_BorrarNota);
+
         //Detalles asociados al menú
-        setTitle("Ver Nota");
+        setTitle(Title_VerNota);
 
         //Conexión a la base de datos
         dbg = new DataBaseSQL(this);
@@ -70,7 +80,7 @@ public class VerNotaActivity extends AppCompatActivity {
         //Botón para borrar la nota
         BorrarNota.setOnClickListener(v -> {
             dbg.deleteNotaId(nota.getId());
-            Toast.makeText(this, "Nota borrada correctamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Toast_BorrarNota, Toast.LENGTH_SHORT).show();
             Intent pasarPantalla = new Intent(VerNotaActivity.this, ListadoActivity.class);
             startActivity(pasarPantalla);
         });

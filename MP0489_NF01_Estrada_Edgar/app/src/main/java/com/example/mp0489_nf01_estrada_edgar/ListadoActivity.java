@@ -28,6 +28,15 @@ public class ListadoActivity extends AppCompatActivity {
     private ArrayList<Nota> notas = new ArrayList<Nota>();
     private ArrayAdapter<Nota> adaptador;
 
+    //Variables para traducción de textos
+    private String Title_Listado;
+    private String Toast_MenuBorrar;
+    private String Toast_MenuCrear;
+    private String Toast_EscogerNota;
+
+
+    //Método On Create
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +49,14 @@ public class ListadoActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Traducción de textos a partir de los strings.xml
+        Title_Listado = getString(R.string.Title_Listado);
+        Toast_MenuBorrar = getString(R.string.Toast_MenuBorrar);
+        Toast_MenuCrear = getString(R.string.Toast_MenuCrear);
+        Toast_EscogerNota = getString(R.string.Toast_EscogerNota);
+
         //Detalles asociados al menú
-        setTitle("Listado de Notas");
-
-
+        setTitle(Title_Listado);
 
         //Conexión a la base de datos
         dbg = new DataBaseSQL(this);
@@ -66,7 +79,7 @@ public class ListadoActivity extends AppCompatActivity {
         listaNotas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Toast.makeText(ListadoActivity.this, "Nota escogida", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListadoActivity.this, Toast_EscogerNota, Toast.LENGTH_SHORT).show();
 
                 //Paso a la pantalla de ver nota y le doy los datos a través de los paquetes que envío por Intent
                 Intent pasarPantalla = new Intent(ListadoActivity.this, VerNotaActivity.class);
@@ -93,14 +106,14 @@ public class ListadoActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.menu_listado_add) {
             //Diseño del botón de añadir notas
-            Toast.makeText(this, "Añadir nota", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Toast_MenuCrear, Toast.LENGTH_SHORT).show();
             Intent pasarPantalla = new Intent(ListadoActivity.this, CrearNotaActivity.class);
             finish();
             startActivity(pasarPantalla);
             return true;
         } else if (id == R.id.menu_listado_delete) {
             //Diseño del botón de borrar notas
-            Toast.makeText(this, "Borrar nota", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Toast_MenuBorrar, Toast.LENGTH_SHORT).show();
             Intent pasarPantalla = new Intent(ListadoActivity.this, BorrarNotasActivity.class);
             startActivity(pasarPantalla);
             return true;

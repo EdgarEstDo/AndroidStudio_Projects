@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:hint="Escribe el contenido de la nota"
+        android:hint="@string/editTextText3_Crear"
         android:inputType="text|textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
-        android:text="Crea tu nota: "
+        android:text="@string/textView2_Crear"
         android:textAlignment="viewStart"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -44,12 +44,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
-        android:hint="Escribe aquí el título de la nota"
+        android:hint="@string/editTextText2_Crear"
         android:inputType="text"
-        app:layout_constraintWidth_max="488dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2_Crear" />
+        app:layout_constraintTop_toBottomOf="@id/textView2_Crear"
+        app:layout_constraintWidth_max="488dp" />
 
     <Button
         android:id="@+id/button_Crear"
@@ -58,7 +58,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="200dp"
         android:layout_marginBottom="200dp"
-        android:text="Volver"
+        android:text="@string/button_Crear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,7 +70,7 @@
         android:layout_marginStart="200dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="200dp"
-        android:text="Crear nota"
+        android:text="@string/button2_Crear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

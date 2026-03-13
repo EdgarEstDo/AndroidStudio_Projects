@@ -36,12 +36,7 @@ public class StartActivity extends AppCompatActivity {
         textoInicial = (TextView) findViewById(R.id.textView_start);
         textoDesigner = (TextView) findViewById(R.id.textView2_start);
 
-        //Detalles asociados al menú
-        setTitle("Inicio");
-
-
         //Creación de la tarea
-
         TimerTask myTimerTask = new TimerTask() {
             @Override
             public void run() {

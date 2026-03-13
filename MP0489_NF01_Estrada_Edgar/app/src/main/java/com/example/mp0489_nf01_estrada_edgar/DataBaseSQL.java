@@ -107,4 +107,9 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.delete("notas", "id=?", new String[]{String.valueOf(id)});
     }
+    //Borrar todas las notas
+    public void deleteAllNotas() {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete("notas", null, null);
+    }
 }

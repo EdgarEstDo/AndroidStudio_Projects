@@ -27,6 +27,12 @@ public class CrearNotaActivity extends AppCompatActivity {
     private DataBaseSQL dbg;
     private Nota nota;
 
+    //Variables para traducción de textos
+    private String Title_CrearNota;
+    private String Toast_CrearNota;
+    private String Toast_NotaVacia;
+
+
 
     //Método On Create
     @Override
@@ -39,8 +45,14 @@ public class CrearNotaActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Traducción de textos a partir de los strings.xml
+        Title_CrearNota = getString(R.string.Title_CrearNota);
+        Toast_CrearNota = getString(R.string.Toast_CrearNota);
+        Toast_NotaVacia = getString(R.string.Toast_NotaVacia);
+
         //Detalles asociados al menú
-        setTitle("Crear Nota");
+        setTitle(Title_CrearNota);
 
         //Conexión a la base de datos
         dbg = new DataBaseSQL(this);
@@ -62,13 +74,13 @@ public class CrearNotaActivity extends AppCompatActivity {
         CrearNota.setOnClickListener(v -> {
 
             if (titulo.getText().toString().isEmpty() || contenido.getText().toString().isEmpty()) {
-                Toast.makeText(this, "Título y contenido obligatorios", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, Toast_NotaVacia, Toast.LENGTH_SHORT).show();
             } else {
                 nota = new Nota("","");
                 nota.setTitulo(titulo.getText().toString());
                 nota.setContenido(contenido.getText().toString());
                 dbg.insertNota(nota);
-                Toast.makeText(this, "Nota creada correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, Toast_CrearNota, Toast.LENGTH_SHORT).show();
                 Intent pasarPantalla = new Intent(CrearNotaActivity.this, ListadoActivity.class);
                 startActivity(pasarPantalla);
             }

@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">MP0489_NF01_Estrada_Edgar</string>
+
+    //Por defecto, debemos siempre crear este primer punto en inglés
+    //Copiamos la carpeta Values y modificamos acorde al idioma
+    //Finalmente, generamos los idiomas
+
+    //Resources Strings of activity borrar notas
+    <string name="button_BorrarTodo">Delete All Notes</string>
+    <string name="button2_BorrarTodo">Back</string>
+    <string name="Title_BorrarTodo">Delete All Notes</string>
+    <string name="Toast_BorrarTodo">All notes deleted</string>
+
+    //Resources Strings of activity crear nota
+    <string name="button_Crear">Back</string>
+    <string name="button2_Crear">Create Note</string>
+    <string name="editTextText2_Crear">Write the title of the note</string>
+    <string name="editTextText3_Crear">Write the content of the note</string>
+    <string name="textView2_Crear">Create your note:</string>
+    <string name="Title_CrearNota">Create Notes</string>
+    <string name="Toast_CrearNota">Note created successfully</string>
+    <string name="Toast_NotaVacia">You must fill both fields</string>
+
+    //Resources Strings of activity listado
+    <string name="ListView_listado"></string>
+    <string name="Title_Listado">Notes</string>
+    <string name="Toast_MenuBorrar">Delete note</string>
+    <string name="Toast_MenuCrear">Add note</string>
+    <string name="Toast_EscogerNota">Note selected</string>
+
+
+    //Resources Strings of activity ver nota
+    <string name="button_Ver">Back</string>
+    <string name="button2_Ver">Delete Note</string>
+    <string name="textView2_Ver">Title of the note</string>
+    <string name="textView3_Ver">Content of the note</string>
+    <string name="Title_VerNota">Note</string>
+    <string name="Toast_BorrarNota">Note deleted successfully</string>
+
+
+    //Resources Strings of activity start
+    <string name="textView_start">Little Notes</string>
+    <string name="textView2_start">Edgar Estrada Dorrego - IFP</string>
+
+
 </resources>

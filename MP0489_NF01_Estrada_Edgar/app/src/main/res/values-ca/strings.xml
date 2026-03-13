@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">MP0489_NF01_Estrada_Edgar</string>
+
+    //Por defecto, debemos siempre crear este primer punto en inglés
+    //Copiamos la carpeta Values y modificamos acorde al idioma
+    //Finalmente, generamos los idiomas
+
+    //Resources Strings of activity borrar notas
+    <string name="button_BorrarTodo">Esborrar totes les notes</string>
+    <string name="button2_BorrarTodo">Tornar</string>
+    <string name="Title_BorrarTodo">Esborrar totes les notes</string>
+    <string name="Toast_BorrarTodo">Totes les notes s\'han esborrat</string>
+
+    //Resources Strings of activity crear nota
+    <string name="button_Crear">Tornar</string>
+    <string name="button2_Crear">Crear Nota</string>
+    <string name="editTextText2_Crear">Escriu aquí el títol de la nota</string>
+    <string name="editTextText3_Crear">Escriu aquí el contingut de la nota</string>
+    <string name="textView2_Crear">Crea la teva nota:</string>
+    <string name="Title_CrearNota">Crear Notes</string>
+    <string name="Toast_CrearNota">Nota creada correctament</string>
+    <string name="Toast_NotaVacia">Has d\'omplir els dos camps</string>
+
+    //Resources Strings of activity listado
+    <string name="ListView_listado"></string>
+    <string name="Title_Listado">Notes</string>
+    <string name="Toast_MenuBorrar">Esborrar nota</string>
+    <string name="Toast_MenuCrear">Afegir nota</string>
+    <string name="Toast_EscogerNota">Nota seleccionada</string>
+
+    //Resources Strings of activity ver nota
+    <string name="button_Ver">Tornar</string>
+    <string name="button2_Ver">Esborrar Nota</string>
+    <string name="textView2_Ver">Títol de la nota</string>
+    <string name="textView3_Ver">Contingut de la nota</string>
+    <string name="Title_VerNota">Nota</string>
+    <string name="Toast_BorrarNota">Nota esborrada correctament</string>
+
+    //Resources Strings of activity start
+    <string name="textView_start">Petites Notes</string>
+    <string name="textView2_start">Edgar Estrada Dorrego - IFP</string>
+
+</resources>
