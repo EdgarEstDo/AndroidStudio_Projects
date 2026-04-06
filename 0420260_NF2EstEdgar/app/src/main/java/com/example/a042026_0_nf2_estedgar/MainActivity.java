@@ -1,8 +1,10 @@
 package com.example.a042026_0_nf2_estedgar;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,10 +24,12 @@ public class MainActivity extends AppCompatActivity {
     private int resultado;
     private int valor1;
     private int valor2;
-    private int botonAleatorio;
 
     //Random para generar números aleatorios
     Random random = new Random();
+
+    //Objeto para sonidos
+    MediaPlayer mp;
 
 
 
@@ -49,9 +53,78 @@ public class MainActivity extends AppCompatActivity {
         valor1 = 0;
         valor2 = 0;
 
+        generarNuevaPregunta();
+        //Estructura para comparar los botones con el resultado
+        result1.setOnClickListener(view -> {
+            if (result1.getText().equals(String.valueOf(resultado))) {
+                preguntaCorrecta();
+            } else {
+                preguntaIncorrecta();
+            }
+        });
+        result2.setOnClickListener(view -> {
+            if (result2.getText().equals(String.valueOf(resultado))) {
+                preguntaCorrecta();
+            } else {
+                preguntaIncorrecta();
+            }
+        });
+        result3.setOnClickListener(view -> {
+            if (result3.getText().equals(String.valueOf(resultado))) {
+                preguntaCorrecta();
+                } else {
+                preguntaIncorrecta();
+            }
+        }); //Fin setOnClickListener
+
+
+
+    } //Fin onCreate
+
+    //Funcion pregunta correcta
+    private void preguntaCorrecta() {
+        Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show();
+        //Uso de los métodos de sonido
+        mp = MediaPlayer.create(this, R.raw.succesful);
+        mp.start();
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
+        generarNuevaPregunta();
+    }
+    private void preguntaIncorrecta() {
+        Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+        //Uso de los métodos de sonido
+        mp = MediaPlayer.create(this, R.raw.wrong);
+        mp.start();
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
+    }
+
+    //Función para generar una nueva pregunta cada vez que acertemos
+    private void generarNuevaPregunta() {
+        //Variables locales e inicialización
+        int botonAleatorio = 0;
+
+        //Randomización de valores de suma
+        valor1 = random.nextInt(9);
+        valor2 = random.nextInt(9);
+        //Suma de valores para el resultado y comparación
+        resultado = valor1 + valor2;
+        //Mostrar en pantalla los números aleatorios de la suma
+        suma_random.setText(String.valueOf(valor1) + " + " + String.valueOf(valor2));
+
         //Generación de números aleatorios para escoger los botones
         botonAleatorio = random.nextInt(3 - 1 + 1) + 1;
 
+        //Bucle para modificar los botones con los números aleatorios
         if(botonAleatorio == 1){
             result1.setText(String.valueOf(resultado));
             result2.setText(String.valueOf(resultado + 1));
@@ -64,15 +137,8 @@ public class MainActivity extends AppCompatActivity {
             result3.setText(String.valueOf(resultado));
             result1.setText(String.valueOf(resultado + 1));
             result2.setText(String.valueOf(resultado - 1));
-        }
+        } //Fin if
+    } //Fin generarNuevaPregunta
 
-        }
-
-
-
-
-
-
-
-
+    
     }
