@@ -5,6 +5,92 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Secondary"
     tools:context=".ReproductorActivity">
 
+    <TextView
+        android:id="@+id/textView_repro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        android:text="Audio Media Player "
+        android:textColor="@color/Main"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2_repro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="URL: "
+        android:textColor="@color/Main"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3_repro" />
+
+    <TextView
+        android:id="@+id/textView3_repro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:text="Title:"
+        android:textColor="@color/Main"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_repro" />
+
+    <ImageButton
+        android:id="@+id/imageButPause__repro"
+        android:layout_width="76dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2_repro"
+        app:srcCompat="@android:drawable/ic_media_pause" />
+
+    <ImageButton
+        android:id="@+id/imageButPlay__repro"
+        android:layout_width="76dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButStop__repro"
+        app:layout_constraintStart_toEndOf="@+id/imageButPause__repro"
+        app:layout_constraintTop_toBottomOf="@+id/textView2_repro"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/imageButStop__repro"
+        android:layout_width="76dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2_repro"
+        app:srcCompat="@android:drawable/alert_light_frame" />
+
+    <Button
+        android:id="@+id/button__repro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/Main"
+        android:text="Back"
+        android:textColor="@color/Secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButPlay__repro" />
 </androidx.constraintlayout.widget.ConstraintLayout>

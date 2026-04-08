@@ -14,9 +14,9 @@ public class Audio {
         this.url = url;
     }
     //Constructores extra
-    public Audio(int id, String title) {
-        this.id = id;
+    public Audio(String title, String url) {
         this.title = title;
+        this.url = url;
     }
 
     //Creación de los getters y setters
@@ -42,6 +42,10 @@ public class Audio {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String toString(){
+        return this.id + ". " + this.title;
     }
 
 }
