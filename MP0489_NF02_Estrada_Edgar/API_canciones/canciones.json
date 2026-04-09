@@ -1,0 +1,49 @@
+{
+  "canciones": [
+    {
+      "nombre": "house1",
+      "url": "https://github.com/EdgarEstDo/AndroidStudio_Projects/raw/refs/heads/main/MP0489_NF02_Estrada_Edgar/API_canciones/house1.mp3",
+      "": ""
+    },
+    {
+      "nombre": "house2",
+      "url": "https://github.com/EdgarEstDo/AndroidStudio_Projects/raw/refs/heads/main/MP0489_NF02_Estrada_Edgar/API_canciones/house2.mp3",
+      "": ""
+    },
+    {
+      "nombre": "house3",
+      "url": "https://github.com/EdgarEstDo/AndroidStudio_Projects/raw/refs/heads/main/MP0489_NF02_Estrada_Edgar/API_canciones/house3.mp3",
+      "": ""
+    },
+    {
+      "nombre": "",
+      "url": "",
+      "": ""
+    },
+    {
+      "nombre": "",
+      "url": "",
+      "": ""
+    },
+    {
+      "nombre": "",
+      "url": "",
+      "": ""
+    },
+    {
+      "nombre": "",
+      "url": "",
+      "": ""
+    },
+    {
+      "nombre": "",
+      "url": "",
+      "": ""
+    },
+    {
+      "nombre": "",
+      "url": "",
+      "": ""
+    }
+  ]
+}
