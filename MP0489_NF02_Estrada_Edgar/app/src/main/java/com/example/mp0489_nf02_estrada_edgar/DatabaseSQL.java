@@ -30,8 +30,8 @@ public class DatabaseSQL extends SQLiteOpenHelper {
         db.execSQL(
                 "CREATE TABLE IF NOT EXISTS music (" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                        "title TEXT NOT NULL," +
-                        "url TEXT NOT NULL" +
+                        "title TEXT  UNIQUE NOT NULL," +
+                        "url TEXT  UNIQUE NOT NULL" +
                         ")"
         );
 
@@ -43,7 +43,7 @@ public class DatabaseSQL extends SQLiteOpenHelper {
 
     } //Fin de la actualización
 
-        //Diseño del recorrido de la lista de las canciones que tenemos
+    //Diseño del recorrido de la lista de las canciones que tenemos
 
     //Vista de todas las notas en StartActivity
     public ArrayList<Audio> getMusic() {
@@ -51,7 +51,7 @@ public class DatabaseSQL extends SQLiteOpenHelper {
         //Creación de la lista de canciones
         ArrayList<Audio> musicList = new ArrayList<Audio>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cur = db.rawQuery("SELECT * FROM music", null);
+        Cursor cur = db.rawQuery("SELECT * FROM music WHERE title != ''", null);
         if (cur !=null){
             //Nos vamos a la última fila
             cur.moveToLast();
@@ -79,17 +79,28 @@ public class DatabaseSQL extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put("title", aux.getTitle());
         values.put("url", aux.getUrl());
-        db.insert("music", null, values);
+        //Inserto solo si no existe ya en la BD
+        db.insertWithOnConflict("music", null, values, SQLiteDatabase.CONFLICT_IGNORE);
         db.close();
 
     } //Fin de la inserción de una canción
 
     //Diseño de la eliminación de todas las canciones en la BD
+
     public void deleteMusic(){
         SQLiteDatabase db = getWritableDatabase();
         db.delete("music", null, null);
         db.close();
     } //Fin de la eliminación de todas las canciones
+
+    //Creo este método para evitar que se añadan canciones repetidas en la BD desde el JSON
+    public boolean exists(String title) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM music WHERE title = ?", new String[]{title});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
 
 
 

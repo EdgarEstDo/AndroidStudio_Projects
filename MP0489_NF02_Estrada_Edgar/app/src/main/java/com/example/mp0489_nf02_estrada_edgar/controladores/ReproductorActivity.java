@@ -15,7 +15,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.mp0489_nf02_estrada_edgar.DatabaseSQL;
 import com.example.mp0489_nf02_estrada_edgar.R;
 
 import java.io.IOException;
@@ -52,8 +51,6 @@ public class ReproductorActivity extends AppCompatActivity {
         stop = (ImageButton) findViewById(R.id.imageButStop__repro);
         back = (Button) findViewById(R.id.button__repro);
 
-        //Conexión a la BD
-        DatabaseSQL dbg = new DatabaseSQL(this);
 
         //Recogida de datos del intent
         Intent receipt = getIntent();
