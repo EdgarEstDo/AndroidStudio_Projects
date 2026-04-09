@@ -8,6 +8,10 @@
         android:title="Add"
         app:showAsAction="always" />
     <item
+        android:id="@+id/delete_menu_start"
+        android:title="Delete All Files"
+        android:visible="false" />
+    <item
         android:id="@+id/exit_menu_start"
         android:title="Exit" />
 </menu>

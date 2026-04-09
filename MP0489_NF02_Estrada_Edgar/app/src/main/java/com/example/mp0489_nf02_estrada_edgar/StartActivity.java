@@ -100,6 +100,15 @@ public class StartActivity extends AppCompatActivity {
             Intent changeScreen = new Intent(StartActivity.this, CrearActivity.class);
             startActivity(changeScreen);
             return true;
+        } else if (id == R.id.delete_menu_start){
+            //Creo este botón que tendré oculto para realizar pruebas y borrar las canciones
+            //de la DB en caso de que lo necesite. Por defecto estará en false en el xml.
+            Toast.makeText(this, "Delete all songs", Toast.LENGTH_SHORT).show();
+            dbg.deleteMusic();
+            Intent changeScreen = new Intent(StartActivity.this, StartActivity.class);
+            finish();
+            startActivity(changeScreen);
+
         } else if (id == R.id.exit_menu_start) {
             //Toast.makeText(this, "Exit", Toast.LENGTH_SHORT).show();
             finish();
