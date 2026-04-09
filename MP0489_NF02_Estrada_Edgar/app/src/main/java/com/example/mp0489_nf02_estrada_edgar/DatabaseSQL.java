@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.mp0489_nf02_estrada_edgar.modelos.Audio;
+
 import java.util.ArrayList;
 
 public class DatabaseSQL extends SQLiteOpenHelper {

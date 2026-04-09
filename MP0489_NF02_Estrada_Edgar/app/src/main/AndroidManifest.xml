@@ -17,18 +17,18 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".ReproductorActivity"
+            android:name=".controladores.ReproductorActivity"
             android:exported="false" />
         <activity
-            android:name=".CrearActivity"
+            android:name=".controladores.CrearActivity"
             android:exported="false" />
         <activity
-            android:name=".StartActivity"
+            android:name=".controladores.StartActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".controladores.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

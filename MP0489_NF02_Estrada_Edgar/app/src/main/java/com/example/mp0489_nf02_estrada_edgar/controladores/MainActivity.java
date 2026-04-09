@@ -1,4 +1,4 @@
-package com.example.mp0489_nf02_estrada_edgar;
+package com.example.mp0489_nf02_estrada_edgar.controladores;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mp0489_nf02_estrada_edgar.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Secondary"
-    tools:context=".CrearActivity">
+    tools:context=".controladores.CrearActivity">
 
     <TextView
         android:id="@+id/textView_crear"
