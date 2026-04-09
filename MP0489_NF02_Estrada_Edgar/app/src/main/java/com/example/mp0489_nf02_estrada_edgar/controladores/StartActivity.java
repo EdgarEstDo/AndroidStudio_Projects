@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class StartActivity extends AppCompatActivity {
 
     //Creación de variables
-    private Menu menu;
+
     private ListView list;
     private ArrayList<Audio> musicList = new ArrayList<Audio>();
     private ArrayAdapter<Audio> adapter;
@@ -38,12 +38,9 @@ public class StartActivity extends AppCompatActivity {
     //Creación de variables para manejar el JSON
     private String urlApiJson = "https://raw.githubusercontent.com/EdgarEstDo/AndroidStudio_Projects/refs/heads/main/MP0489_NF02_Estrada_Edgar/API_canciones/canciones.json";
     private String jsonOnline = "";
-    private ArrayList<Audio> listaCanciones;
     modeloAudio ma = new modeloAudio();
-
     //Creación de hilos en el sistema
     Thread onlineRead;
-
     //Creación de variables para traducción de textos
     private String Title_Menu_Start = "Playlists Online";
 
@@ -84,6 +81,8 @@ public class StartActivity extends AppCompatActivity {
         onlineRead = new Thread(new Runnable() {
             @Override
             public void run() {
+
+                //Añado un preset de canciones desde la nube (Mi GitHub) para probar la app
                 jsonOnline = ma.getJsonFromUrl(urlApiJson);
                 //Sacamos el JSON en consola
                 System.out.println(jsonOnline);
@@ -97,7 +96,7 @@ public class StartActivity extends AppCompatActivity {
                 //Recorro la lista de la nube y la inserto en la BD
                 for (int i = 0; i < listaDeLaNube.size(); i++) {
                     Audio a = listaDeLaNube.get(i);
-                    // Solo la añadimos si NO existe ya en la base de datos
+                    // Comprobamos si la canción ya existe en la BD antes de insertarla
                     if (!dbg.exists(a.getTitle())) {
                         dbg.addMusic(a);
                     }
@@ -132,7 +131,7 @@ public class StartActivity extends AppCompatActivity {
 
     } //Fin de onCreate
 
-    // He cambiado el nombre para que no se confunda con el ciclo de vida
+    // Método para actualizar la lista desde la BD
     private void actualizarListaDesdeBD() {
         ArrayList<Audio> listaActualizada = dbg.getMusic();
         musicList.clear();
@@ -145,7 +144,7 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Cada vez que vuelvas de "CrearActivity", esto actualizará la lista
+        // Actualizamos la lista desde la BD cuando la actividad se reanuda
         actualizarListaDesdeBD();
     }
 
