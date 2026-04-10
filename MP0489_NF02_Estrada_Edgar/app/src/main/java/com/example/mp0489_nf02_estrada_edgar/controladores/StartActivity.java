@@ -32,7 +32,6 @@ public class StartActivity extends AppCompatActivity {
     private ListView list;
     private ArrayList<Audio> musicList = new ArrayList<Audio>();
     private ArrayAdapter<Audio> adapter;
-
     private DatabaseSQL dbg;
 
     //Creación de variables para manejar el JSON
@@ -41,8 +40,7 @@ public class StartActivity extends AppCompatActivity {
     modeloAudio ma = new modeloAudio();
     //Creación de hilos en el sistema
     Thread onlineRead;
-    //Creación de variables para traducción de textos
-    private String Title_Menu_Start = "Playlists Online";
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -56,9 +54,12 @@ public class StartActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        //Creación de variables para traducción de textos
+        String Toast_Choose = getString(R.string.Toast_Choose);
 
         //Creación del menú - Title
-        setTitle(Title_Menu_Start);
+        setTitle(getString(R.string.Title_Menu_Start));
+
 
         //Conexión a la BD
         dbg = new DatabaseSQL(this);
@@ -72,6 +73,7 @@ public class StartActivity extends AppCompatActivity {
         // Configuro el listener para la lista de canciones
         list.setOnItemClickListener((parent, view, position, id) -> {
             Audio aux = musicList.get(position);
+            Toast.makeText(StartActivity.this, Toast_Choose + " " + aux.getTitle(), Toast.LENGTH_SHORT).show();
             Intent changeScreen = new Intent(StartActivity.this, ReproductorActivity.class);
             changeScreen.putExtra("title", aux.getTitle());
             changeScreen.putExtra("url", aux.getUrl());
@@ -160,20 +162,29 @@ public class StartActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        //Creación de variables para traducción de textos
+        String Toast_NewSong = getString(R.string.Toast_NewSong);
+        String Toast_Delete = getString(R.string.Toast_Delete);
+        String Toast_Exit = getString(R.string.Toast_Exit);
+        String Toast_Choose = getString(R.string.Toast_Choose);
+
         int id = item.getItemId();
         if (id == R.id.add_menu_start) {
-            Toast.makeText(this, "Add new song", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Toast_NewSong, Toast.LENGTH_SHORT).show();
             Intent changeScreen = new Intent(StartActivity.this, CrearActivity.class);
             startActivity(changeScreen);
             return true;
 
         } else if (id == R.id.delete_menu_start) {
-            Toast.makeText(this, "Delete all files", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Toast_Delete, Toast.LENGTH_SHORT).show();
             dbg.deleteMusic();
             actualizarListaDesdeBD();
             return true;
         } else if (id == R.id.exit_menu_start) {
-            //Toast.makeText(this, "Exit", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, Toast_Exit, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Toast_Exit, Toast.LENGTH_SHORT).show();
+
             finish();
             //System.exit(0); -- En mi caso, el system exit no funciona
             //En documentación de Android, usan finishAffinity() y con este si que surte efecto

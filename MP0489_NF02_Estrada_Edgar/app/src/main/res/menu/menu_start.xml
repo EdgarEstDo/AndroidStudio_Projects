@@ -5,11 +5,11 @@
     <item
         android:id="@+id/add_menu_start"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="Add"
         app:showAsAction="always" />
     <item
         android:id="@+id/delete_menu_start"
-        android:title="Delete All Files" />
+        android:title="Delete All Files"
+        android:visible="false" />
     <item
         android:id="@+id/exit_menu_start"
         android:title="Exit" />

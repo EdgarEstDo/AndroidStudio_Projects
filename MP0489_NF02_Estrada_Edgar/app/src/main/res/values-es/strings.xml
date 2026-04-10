@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">MP0489_NF02_Estrada_Edgar</string>
+
+    //Preparación de strings en cada actividad
+    // Resources CrearActivity
+
+    <string name="TextView_crear">Crear una nueva canción</string>
+    <string name="EditTextText_crear">Introduce el nombre de la canción</string>
+    <string name="EditTextText2_crear">Introduce la URL</string>
+    <string name="textView2_crear">Nombre de la canción</string>
+    <string name="textView3_crear">URL</string>
+    <string name="button_crear">Añadir</string>
+    <string name="Toast_Empty">Debes rellenar todos los campos</string>
+    <string name="Toast_Add">Canción añadida</string>
+
+    //Resources MainActivity
+    <string name="textView_main">Mi estudio de música</string>
+    <string name="textView2_main">NF02 por Edgar Estrada</string>
+
+    //Resources StartActivity
+
+    <string name="Title_Menu_Start">Lista de reproducción online</string>
+    <string name="Toast_Choose">Canción seleccionada:</string>
+    <string name="Toast_NewSong">Añadir nueva canción</string>
+    <string name="Toast_Delete">Eliminar todas las canciones</string>
+    <string name="Toast_Exit">Gracias por usar nuestra app</string>
+
+    //Resources ReproductorActivity
+    <string name="Toast_Streaming">Streaming listo</string>
+    <string name="textView_repro">Reproductor de audio</string>
+    <string name="textView2_repro">URL:</string>
+    <string name="textView3_repro">Título:</string>
+    <string name="button_repro">Atrás</string>
+
+    //Resources Menu
+    <string name="add_menu_start">Añadir una canción</string>
+    <string name="delete_menu_start">Borrar toda la lista</string>
+    <string name="exit_menu_start">Salir</string>
+
+</resources>

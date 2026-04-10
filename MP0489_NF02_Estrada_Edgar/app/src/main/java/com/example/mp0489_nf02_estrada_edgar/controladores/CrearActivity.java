@@ -30,6 +30,9 @@ public class CrearActivity extends AppCompatActivity {
     private DatabaseSQL dbg;
     private Audio aux;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,9 @@ public class CrearActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        //Variables para traducción de lenguajes
+        String Toast_Empty = getString(R.string.Toast_Empty);
+        String Toast_Added = getString(R.string.Toast_Add);
 
 
         //Conexión a la BD
@@ -57,13 +63,13 @@ public class CrearActivity extends AppCompatActivity {
         addSong.setOnClickListener(v -> {
 
             if (title.getText().toString().isEmpty() || url.getText().toString().isEmpty()) {
-                Toast.makeText(this, "You must fill all the fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, Toast_Empty, Toast.LENGTH_SHORT).show();
             } else {
                 aux = new Audio("","");
                 aux.setTitle(title.getText().toString());
                 aux.setUrl(url.getText().toString());
                 dbg.addMusic(aux);
-                Toast.makeText(this, "Song added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, Toast_Added, Toast.LENGTH_SHORT).show();
                 Intent changeScreen = new Intent(CrearActivity.this, StartActivity.class);
                 finish();
                 startActivity(changeScreen);

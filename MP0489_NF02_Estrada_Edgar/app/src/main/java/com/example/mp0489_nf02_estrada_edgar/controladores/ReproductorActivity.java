@@ -31,6 +31,9 @@ public class ReproductorActivity extends AppCompatActivity {
     private Button back;
     private MediaPlayer mp;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,7 @@ public class ReproductorActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
 
         //Inicialización de variables
         activityName = (TextView) findViewById(R.id.textView_repro);
@@ -88,6 +92,8 @@ public class ReproductorActivity extends AppCompatActivity {
     //Métodos relacionados con Media Player para poder usar el reproductor
     private void chargeStreaming (String url){
 
+        //Variables para traducción de lenguajes
+        String Toast_Streaming = getString(R.string.Toast_Streaming);
         try {
             mp = new MediaPlayer();
             //Establecemos la fuente de datos como dice la documentación
@@ -97,7 +103,7 @@ public class ReproductorActivity extends AppCompatActivity {
             mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
-                    Toast.makeText(ReproductorActivity.this, "Streaming ready", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ReproductorActivity.this,Toast_Streaming, Toast.LENGTH_SHORT).show();
                 }
             });
 

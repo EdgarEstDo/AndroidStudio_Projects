@@ -86,7 +86,6 @@ public class DatabaseSQL extends SQLiteOpenHelper {
     } //Fin de la inserción de una canción
 
     //Diseño de la eliminación de todas las canciones en la BD
-
     public void deleteMusic(){
         SQLiteDatabase db = getWritableDatabase();
         db.delete("music", null, null);
